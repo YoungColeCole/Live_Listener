@@ -14,6 +14,8 @@ WebSocket relay server that streams audio from multiple Android tablets to a pho
 
 ## How It Works
 
+Senders (tablets) only open the microphone when the relay tells them to start (receiver connected), and **each tablet** applies its own rules (e.g. screen-off only + a short delay). The relay forwards `startStreaming` / `stopStreaming` and PCM data; it does not control the tablet OS privacy indicator.
+
 ```
 Tablet 1 (Sender) ───┐
                      │
